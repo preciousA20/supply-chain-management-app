@@ -31,7 +31,7 @@ export default function Home() {
       const getCampaignsData = await getAllShipments()
       setGetAllShipmentsData(getCampaignsData)
     })()
-  },[])
+  },[currentUser])
 
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">

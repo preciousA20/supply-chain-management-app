@@ -2,7 +2,7 @@
 import { useState, useEffect, createContext } from "react";
 import Web3Modal from 'web3modal'
 import { ethers } from 'ethers'
-import { contractAbi, contractAddress } from "./context/Tracking";
+import { contractAbi, contractAddress} from "./context/tracking";
 //import { createContext } from "vm";
 
 // function to connect to smart contract 
@@ -14,7 +14,7 @@ const fetchContract = (signerOrProvider: any)=>{
  
 export const TrackingContext = createContext({})
  
-export const TrackingProvider = ({children}: any)=>{
+export const TrackingProvider = ({children}: any)=>{ 
  
     //state variables
     const dappName: string = "Product Tracking Decentralized Application"

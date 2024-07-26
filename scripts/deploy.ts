@@ -1,21 +1,22 @@
-const { ethers } = require("hardhat")
+// const { ethers } = require("hardhat")
+// const { hre } = require("hardhat")
 
-async function main() {
+// async function main() {
  
-  const Tracking = await ethers.getContractFactory("Tracking")
-  const tracking = await Tracking.deploy()
+//   const Tracking = await hre.ethers.getContractFactory("Tracking")
+//   const tracking = await Tracking.deploy()
 
-  await tracking.deployed();
+//   await tracking.deployed();
 
-  console.log(`contract deployed to ${tracking.address}`);
-}
+//   console.log(`contract deployed to ${tracking.address}`);
+// }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+// // We recommend this pattern to be able to use async/await everywhere
+// // and properly handle errors.
+// main().catch((error) => {
+//   console.error(error);
+//   process.exitCode = 1;
+// });
 
 // import { ethers } from "hardhat";
 
@@ -39,3 +40,23 @@ main().catch((error) => {
 //     }
 //   }
 // })()
+
+
+
+const hre = require("hardhat")
+
+async function main(){
+
+  const Tracking = await hre.ethers.getContractFactory("Tracking")
+
+  const tracking = await Tracking.deploy()
+
+  await tracking.deployed()
+
+  console.log(`Contract deployed to address: ${tracking.address}`)
+}
+
+main().catch((error)=>{
+  console.error(error)
+  process.exitCode = 1
+})
